@@ -33,10 +33,6 @@ class PluginPackageRootValueTest extends TestCase {
 	 * @return void
 	 */
 	public function testGetPackageRootReturnsWpPluginDir(): void {
-		// Check if WP_PLUGIN_DIR is defined. If not, define it.
-		if ( ! defined( 'WP_PLUGIN_DIR' ) ) {
-			define( 'WP_PLUGIN_DIR', '/path/to/plugins' );
-		}
 		$wpPluginDir = WP_PLUGIN_DIR;
 		$root        = new PluginPackageRootValue();
 		$this->assertEquals( $wpPluginDir, $root->getPackageRoot() );
